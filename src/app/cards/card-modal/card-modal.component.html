@@ -1,0 +1,60 @@
+<h2 mat-dialog-title>{{ data ? 'Kartviziti Düzenle' : 'Yeni Kartvizit' }}</h2>
+<mat-dialog-content class="mat-typography">
+  <div *ngIf="showSpinner">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <br>
+  </div>
+  <form [formGroup]="cardForm">
+    <mat-form-field class="example-full-width" *ngIf="!data">
+        <mat-label>Başlık</mat-label>
+        <input matInput formControlName="Title">
+    </mat-form-field>
+    
+    <ng-container *ngIf="data">
+        <div formGroupName="metadata">
+            <mat-form-field class="example-full-width">
+                <mat-label>Başlık</mat-label>
+                <input matInput formControlName="Title">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Plot</mat-label>
+                <input matInput formControlName="Plot">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Poster</mat-label>
+                <input matInput formControlName="Poster">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Yıl</mat-label>
+                <input matInput formControlName="Year">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Dil</mat-label>
+                <input matInput formControlName="Language">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Ülke</mat-label>
+                <input matInput formControlName="Country">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Tür</mat-label>
+                <input matInput formControlName="Genre">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Yönetmen</mat-label>
+                <input matInput formControlName="Director">
+            </mat-form-field>
+        </div>
+    </ng-container>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <div class="flex-grow-1 text-start" *ngIf="data">
+    <button mat-stroked-button color="warn" (click)="deleteCard()" [disabled]="showSpinner">Sil</button>
+  </div>
+  <div>
+    <button mat-button mat-dialog-close>Vazgeç</button>
+    <button mat-flat-button color="primary" (click)="data ? updateCard() : sendTitleValue()" [disabled]="cardForm.invalid || showSpinner">{{ data ? 'Düzenle' : 'Ekle' }}</button>
+  </div>
+</mat-dialog-actions>
