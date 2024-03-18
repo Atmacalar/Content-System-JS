@@ -1,0 +1,33 @@
+<div class="contain mt-5">
+    <div class="row p-5">
+        <div class="col-lg-2" *ngIf="cardService.movieDetailsCard">
+            <img src="{{cardService.movieDetailsCard.metadata?.Poster}}">
+        </div>
+        <div class="col-lg-10 ml-6">
+            <h1>{{cardService.movieDetailsCard.title}}</h1>
+            <i>{{cardService.movieDetailsCard.metadata?.Plot}}</i>
+            <div class="row m-5">
+                <div class="flex">
+                    <p>{{cardService.movieDetailsCard.metadata?.Year}}</p>
+                    <p>{{cardService.movieDetailsCard.metadata?.Language}}</p>
+                </div>
+                <div class="flex">
+                    <p>{{cardService.movieDetailsCard.metadata?.Country}}</p>
+                    <p>{{cardService.movieDetailsCard.metadata?.Genre}}</p>
+                </div>  
+            </div>
+            <b>{{cardService.movieDetailsCard.metadata?.Director}}</b>
+        </div>
+        <span style="margin-top: 10px; margin-bottom: 10px;"><i>Casts</i></span>
+        <hr>
+        <div *ngIf="cardService.movieDetailsCard.actors && cardService.movieDetailsCard.actors.length > 0" class="flex-container">
+    <div class="flex-item" *ngFor="let actor of cardService.movieDetailsCard.actors">
+        <p style="font-size: 20px;">{{ actor.name }}</p>
+        <img src="{{actor.poster}}" style="width: 150px; height: 150px;">
+    </div>
+</div>
+
+        
+
+    </div>
+</div>

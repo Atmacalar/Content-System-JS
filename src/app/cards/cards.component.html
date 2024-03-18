@@ -1,16 +1,18 @@
 <main>
    <div class="d-flex align-items-center">
     <div class="flex-grow-1">
-      <h1 class="page-title">Kartvizitler</h1>
-      <p class="page-description">Kartvizitler Listesi</p>
+      <h1 class="page-title">İçerik</h1>
+      <p class="page-description">İçerikler Listesi</p>
     </div>
+    
     <div class="col-12 col-md-8"></div>
-    <button mat-flat-button color="primary" (click)="openAddCardModal()">Yeni Kartvizit</button>
+    <app-card-search></app-card-search>
+    <button mat-flat-button color="primary" style="margin-left: 16px;" (click)="openAddCardModal()">Yeni İçerik</button>
    </div>
     <hr>
    <div class="cards">
       <div class="row">
-        <div class="col-12 col-md-4" *ngFor="let card of cardService.cards">
+        <div class="col-12 col-md-4" *ngFor="let card of cardService.filteredCards">
            <app-card-item [card]="card"></app-card-item>
          </div>
      </div>

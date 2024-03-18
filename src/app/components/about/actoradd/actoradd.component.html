@@ -1,0 +1,22 @@
+<mat-form-field class="example-full-width">
+  <mat-label>Name</mat-label>
+  <input matInput [(ngModel)]="name" >
+</mat-form-field>
+<mat-form-field class="example-full-width">
+  <mat-label>Poster</mat-label>
+  <input matInput [(ngModel)]="poster" >
+</mat-form-field>
+<mat-form-field class="example-full-width">
+  <mat-label>Content İD</mat-label>
+  <input matInput type="number" [(ngModel)]="getContentId" >
+</mat-form-field>
+ 
+  
+  
+<mat-dialog-actions align="end">
+    
+    <div>
+      <button mat-button mat-dialog-close>Vazgeç</button>
+      <button mat-flat-button color="primary" (click)="addActtor()" >Ekle</button>
+    </div>
+  </mat-dialog-actions>

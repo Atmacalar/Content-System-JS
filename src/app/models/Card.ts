@@ -1,6 +1,6 @@
 export interface Card {
     id: number;
-    Title: string;
+    title: string;
    
     metadata?: {
        

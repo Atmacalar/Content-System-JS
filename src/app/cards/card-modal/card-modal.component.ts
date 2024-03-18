@@ -30,7 +30,7 @@ export class CardModalComponent implements OnInit {
   ngOnInit(): void {
     this.cardForm = this.fb.group({
      
-      Title: [this.data?.Title || '', [Validators.required, Validators.maxLength(255)]],
+      Title: [this.data?.title || '', [Validators.required, Validators.maxLength(255)]],
       
 
       metadata: this.fb.group({
@@ -60,13 +60,16 @@ export class CardModalComponent implements OnInit {
   
  updateCard():void{
   this.showSpinner=true;
-this.cardService.updateCard(this.cardForm.value, this.data.id)
+this.cardService.updateCard( this.data.id,this.cardForm.value)
 .subscribe((res:any) =>{
+  console.log(res);
 this.getSuccess(res || 'Kartvizit Başarıyla Güncellendi');
 }, (err: any) => {
+
   this.getError(err.message || 'Bir Sorun var');
  });
  
+
 }
 
 deleteCard():void{

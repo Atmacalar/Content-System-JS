@@ -55,6 +55,6 @@
   </div>
   <div>
     <button mat-button mat-dialog-close>Vazgeç</button>
-    <button mat-flat-button color="primary" (click)="data ? updateCard() : sendTitleValue()" [disabled]="cardForm.invalid || showSpinner">{{ data ? 'Düzenle' : 'Ekle' }}</button>
+    <button mat-flat-button color="primary" (click)="data ? updateCard() : sendTitleValue()">{{ data ? 'Düzenle' : 'Ekle' }}</button>
   </div>
 </mat-dialog-actions>

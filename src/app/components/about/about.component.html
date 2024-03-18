@@ -1,10 +1,11 @@
 <div class="container">
+  <button mat-flat-button color="primary" style="margin:15px; background-color: blue; color: white;" (click)="openAddCardModal()" >Yeni Aktör</button>
   <div class="row">
     <div class="col-md-3" *ngFor="let actor of actors">
       <div class="card"  style="width: 18rem; margin: 5px;">
-        <img src="{{actor.poster}}"  class="card-img-top" style="width: 250px; height: 250px;" alt="...">
+        <img src="{{actor.poster}}"  class="card-img-top" style="width: 250px; height: 250px;" alt="..." (click)="deleteActor(actor.id)">
         <div class="card-body">
-          <h5 class="card-title" style="font-size: 14px;">{{actor.name}}</h5>
+          <h5 class="card-title" style="font-size: 14px;"><b>{{actor.name}}</b></h5>
          </div>
       </div>
     </div>

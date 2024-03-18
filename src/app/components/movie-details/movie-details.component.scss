@@ -1,0 +1,59 @@
+img{
+    width: 100%;
+    height: auto;
+}
+
+h1
+{
+    color: #191717;
+    font-weight: bold;
+   
+}
+
+p{
+    color: #181616;
+}
+
+a{
+    background-color: #E50914;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: #E50914;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.flex {
+    margin-top: 25px;
+  }
+
+  .flex p {
+    margin-right: 150px;
+     /* Dilediğiniz miktarı ayarlayabilirsiniz */
+     font-size: 15px;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  i {
+    font-size: 30px;
+ }
+
+ b{
+    font-size: 20px;
+ }
+
+ .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+.flex-item {
+     /* İstediğiniz genişlikte ayarlayabilirsiniz */
+    margin: 25px; /* İstediğiniz boşluk miktarını ayarlayabilirsiniz */
+}
+
+  
